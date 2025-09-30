@@ -62,7 +62,7 @@ public class QuanLiCuaHangForm extends javax.swing.JFrame {
         add(title, BorderLayout.NORTH);
 
         // === Bảng sản phẩm ===
-        String[] cols = {"Ma san pham", "Ten san pham", "Loai", "Gia (VND)", "So luong (gram)", "Ngay nhap"};
+        String[] cols = {"Ma san pham", "Ten san pham", "Loai", "Gia (VND)", "So luong ", "Ngay nhap"};
         tableModel.setColumnIdentifiers(cols);
         table = new JTable(tableModel);
         table.setRowHeight(25);
@@ -91,7 +91,7 @@ public class QuanLiCuaHangForm extends javax.swing.JFrame {
         inputPanel.add(tfLoai);
         inputPanel.add(new JLabel("Gia (VND):"));
         inputPanel.add(tfGia);
-        inputPanel.add(new JLabel("So luong (gram):"));
+        inputPanel.add(new JLabel("So luong :"));
         inputPanel.add(tfSoLuong);
         inputPanel.add(new JLabel("Ngay nhap:"));
         inputPanel.add(tfNgayNhap);
@@ -273,10 +273,10 @@ public class QuanLiCuaHangForm extends javax.swing.JFrame {
             java.io.File fileToSave = fileChooser.getSelectedFile();
 
             try (FileWriter writer = new FileWriter(fileToSave)) {
-                writer.write("Ma san pham,Ten san pham,Loai,Gia (VND),So luong (gram),Ngay nhap\n");
+                writer.write("Ma san pham,Ten san pham,Loai,Gia (VND),So luong ,Ngay nhap\n");
                 for (SanPham sp : dsSanPham) {
                     writer.write(sp.ma + "," + sp.ten + "," + sp.loai + ","
-                            + sp.gia + " VND," + sp.soLuong + " gram," + sp.ngayNhap + "\n");
+                            + sp.gia + " VND," + sp.soLuong + " ," + sp.ngayNhap + "\n");
                 }
                 JOptionPane.showMessageDialog(this, "Xuat file thanh cong tai: " + fileToSave.getAbsolutePath());
             } catch (IOException e) {
