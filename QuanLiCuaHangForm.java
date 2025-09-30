@@ -228,7 +228,7 @@ public class QuanLiCuaHangForm extends javax.swing.JFrame {
             row.add(sp.ten);
             row.add(sp.loai);
             row.add(sp.gia + " VND");
-            row.add(sp.soLuong + " gram");
+            row.add(sp.soLuong );
             row.add(sp.ngayNhap);
             tableModel.addRow(row);
         }
@@ -244,7 +244,7 @@ public class QuanLiCuaHangForm extends javax.swing.JFrame {
                 row.add(sp.ten);
                 row.add(sp.loai);
                 row.add(sp.gia + " VND");
-                row.add(sp.soLuong + " gram");
+                row.add(sp.soLuong );
                 row.add(sp.ngayNhap);
                 tableModel.addRow(row);
             }
