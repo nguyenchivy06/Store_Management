@@ -10,6 +10,10 @@ import java.util.Vector;
 
 public class QuanLiCuaHangForm extends javax.swing.JFrame {
 
+    // Logger to handle exception logging
+    private static final java.util.logging.Logger logger =
+            java.util.logging.Logger.getLogger(QuanLiCuaHangForm.class.getName());
+
     private final ArrayList<SanPham> dsSanPham = new ArrayList<>();
     private final DefaultTableModel tableModel = new DefaultTableModel();
 
@@ -19,9 +23,9 @@ public class QuanLiCuaHangForm extends javax.swing.JFrame {
 
     public QuanLiCuaHangForm() {
         initComponents();
+        setLayout(new java.awt.BorderLayout());
         customUI();
     }
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -173,7 +177,7 @@ public class QuanLiCuaHangForm extends javax.swing.JFrame {
         }
 
         dsSanPham.add(new SanPham(ma, ten, loai, gia, sl, ngayNhap));
-        capNhatBang();
+        capNhatBang(); // Cập nhật lại bảng để hiển thị sản phẩm vừa thêm
     }
 
     private void suaSanPham() {
@@ -280,7 +284,7 @@ public class QuanLiCuaHangForm extends javax.swing.JFrame {
             }
         }
     }
- 
+
     static class SanPham {
 
         String ma, ten, loai, ngayNhap;
@@ -311,7 +315,7 @@ public class QuanLiCuaHangForm extends javax.swing.JFrame {
                 }
             }
         } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
+            logger.log(java.util.logging.Level.SEVERE, null, (UnsupportedLookAndFeelException) ex);
         }
         //</editor-fold>
 
